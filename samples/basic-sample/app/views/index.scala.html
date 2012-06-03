@@ -1,0 +1,13 @@
+@(message: String)
+
+@main("Welcome to Play 2.0") {
+    
+    @play20.welcome(message, style = "Java")
+    
+    <a href="@routes.Application.index()">Reload</a>
+    
+    @helper.form(action = routes.Application.save()) {
+    	<input type="text" name="test">
+    	<input type="submit" value="Save">
+    }
+}
