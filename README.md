@@ -39,6 +39,14 @@ Consider this example:
 		Assert.assertEquals("#bookings", 1, bookings.size());
 	}
 
+Installation
+------------
+
+In your `Build.scala` add the dependencies. Use the test scope, because funcy is not required 
+at runtime. You have to include the dependency for jsoup as well, because I did not yet
+succeed in building the module so that this dependency is transported to the app in test scope
+(solution, anybody?).
+
 Page
 ----
 
