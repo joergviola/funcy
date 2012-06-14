@@ -1,7 +1,7 @@
 funcy
 =====
 
-Page Driven Functional Test for Play 2.0. 
+Page Driven Functional Tests for Play 2.0. 
 
 Introduction
 ------------
@@ -47,10 +47,22 @@ at runtime. You have to include the dependency for jsoup as well, because I did 
 succeed in building the module so that this dependency is transported to the app in test scope
 (solution, anybody?).
 
+Don't forget to add my module repository as well:
+
+    val appDependencies = Seq(
+      "funcy" % "funcy_2.9.1" % "0.1" % "test",
+      "org.jsoup" % "jsoup" % "1.6.2" % "test"
+    )
+
+    val main = PlayProject(appName, appVersion, appDependencies, mainLang = JAVA).settings(
+   		resolvers += Resolver.url("Joerg Violas Repository", url("http://www.joergviola.de/releases/"))(Resolver.ivyStylePatterns),
+    )
+
+
 Page
 ----
 
-Subclass `Page` for each page of your application. Consider the following example:
+Create a subclass of `Page` for each page of your application. Consider the following example:
 
 	package pages;
 	
