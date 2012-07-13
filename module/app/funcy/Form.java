@@ -23,7 +23,9 @@ public class Form {
 		for (Tag input : formTag.getElementsByTag("input")) {
 			String name = input.attr("name");
 			String value = input.attr("value");
-			addInput(input, name, value);
+			String type = input.attr("type");
+			if (!"submit".equals(type))
+				addInput(input, name, value);
 		}
 		for (Tag input : formTag.getElementsByTag("textarea")) {
 			String name = input.attr("name");
@@ -54,7 +56,7 @@ public class Form {
 				.attr("value", value).first();
 		if (submit != null) {
 			String name = submit.attr("name");
-			set(name, value);
+			params.put(name, value);
 		} else {
 			TagList buttons = formTag.getElementsByTag("button").text(value);
 			Assert.assertEquals("No button found in form with text " + value,

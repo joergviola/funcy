@@ -92,7 +92,7 @@ public class Page extends Tag {
 
 	public static Result post(String uri, HashMap<String, String> params) {
 		if (log)
-			System.out.println("POST " + uri);
+			System.out.println("POST " + uri + " " + params.toString());
 		Page.uri = uri;
 		Result result = process(fakeRequest(POST, uri).withFormUrlEncodedBody(
 				params));

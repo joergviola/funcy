@@ -20,16 +20,12 @@ public class FunctionalTest {
 
 	private static FakeApplication app;
 
-	@BeforeClass
-	public static void startApp() {
-		Map<String, String> conf = configuration();
-		conf.remove("basic.auth");
-		conf.putAll(inMemoryDatabase());
+	protected static void startApp(Map<String, String> conf) {
 		app = fakeApplication(conf);
 		start(app);
 	}
 
-	public static Map<String, String> configuration() {
+	protected static Map<String, String> configuration() {
 		Map<String, String> conf = new HashMap<String, String>();
 		Config config = ConfigFactory.parseFileAnySyntax(new File(
 				"conf/application.conf"));
@@ -38,6 +34,7 @@ public class FunctionalTest {
 			ConfigValue value = entry.getValue();
 			conf.put(entry.getKey(), value.unwrapped().toString());
 		}
+		conf.putAll(inMemoryDatabase());
 		return conf;
 	}
 
