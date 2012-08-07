@@ -51,6 +51,12 @@ public class Form {
 		params.put(name, value);
 	}
 
+	public void remove(String name) {
+		if (!params.containsKey(name))
+			Assert.fail("Attempt to remove unknown input field " + name);
+		params.remove(name);
+	}
+
 	public Result submitName(String value) {
 		Tag submit = formTag.getElementsByTag("input").attr("type", "submit")
 				.attr("value", value).first();
