@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 import junit.framework.Assert;
 import junit.framework.Test;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Element;
 
