@@ -1,8 +1,8 @@
-package functional;
+package funcy.functional;
 
 import org.junit.Test;
 
-import pages.IndexPage;
+import funcy.pages.IndexPage;
 
 import funcy.FunctionalTest;
 
