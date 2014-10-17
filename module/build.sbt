@@ -11,6 +11,7 @@ resolvers ++= Seq(
 
 scalaVersion := "2.11.3"
 
+crossScalaVersions := Seq("2.10.4", "2.11.3")
 
 lazy val root = (project in file(".")).enablePlugins(PlayJava)
 
