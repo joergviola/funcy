@@ -1,6 +1,6 @@
 # funcy
 
-Page Driven Functional Tests for Play 2.3.x 
+Page Driven Functional Tests for [Play 2.3.x](https://playframework.com/).
 
 ## Introduction
 
