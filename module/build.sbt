@@ -9,7 +9,8 @@ resolvers ++= Seq(
   "Typesafe Maven Repository" at "http://repo.typesafe.com/typesafe/maven-releases/"
 )
 
-scalaVersion := "2.10.4"
+scalaVersion := "2.11.3"
+
 
 lazy val root = (project in file(".")).enablePlugins(PlayJava)
 
