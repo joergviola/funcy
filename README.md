@@ -46,8 +46,7 @@ Don't forget to add my module repository as well:
 resolvers += Resolver.url("Edulify Repository", url("http://edulify.github.io/modules/releases/"))(Resolver.ivyStylePatterns)
 
 libraryDependencies ++= Seq(
-    "funcy" % "funcy_2.9.1" % "0.1" % "test",
-    "org.jsoup" % "jsoup" % "1.6.2" % "test"
+    "funcy" %% "funcy" % "0.3" % "test"
 )  
 ```
 
@@ -59,12 +58,11 @@ Don't forget to add my module repository as well:
 
 ```scala
 val appDependencies = Seq(
-  "funcy" % "funcy_2.9.1" % "0.1" % "test",
-  "org.jsoup" % "jsoup" % "1.6.2" % "test"
+  "funcy" %% "funcy" % "0.3" % "test"
 )
 
 val main = PlayProject(appName, appVersion, appDependencies, mainLang = JAVA).settings(
-    resolvers += Resolver.url("Joerg Violas Repository", url("http://www.joergviola.de/releases/"))(Resolver.ivyStylePatterns),
+    resolvers += Resolver.url("Edulify Repository", url("http://edulify.github.io/modules/releases/"))(Resolver.ivyStylePatterns)
 )
 ```
 
@@ -131,4 +129,4 @@ public void testIndex() {
 }
 ```
 
-And remember, Play! 2.3.x Functional Tests give you full access to the database!    
+And remember, Play! 2.3.x Functional Tests give you full access to the database!
