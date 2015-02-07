@@ -8,12 +8,12 @@ import java.util.regex.Pattern;
 
 import junit.framework.Assert;
 
-import org.apache.commons.lang.StringEscapeUtils;
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.jsoup.nodes.Element;
 
 import play.i18n.Lang;
 import play.mvc.Result;
-import play.templates.ScalaTemplateCompiler.Template;
+import play.twirl.api.Content;
 
 public class Tag {
 
@@ -106,7 +106,7 @@ public class Tag {
 
 	public void containsMessage(String code) {
 		String string = play.i18n.Messages.get(Lang.forCode("de"), code);
-		string = StringEscapeUtils.escapeHtml(string);
+		string = StringEscapeUtils.escapeHtml4(string);
 		Assert.assertFalse("content does not include message '" + code + "'",
 				html().indexOf(string) == -1);
 	}

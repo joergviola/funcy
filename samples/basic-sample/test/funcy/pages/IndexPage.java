@@ -1,4 +1,4 @@
-package pages;
+package funcy.pages;
 
 import play.mvc.Result;
 import funcy.Form;
