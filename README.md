@@ -9,7 +9,7 @@ Introduction
 Functional Test in Play 2.0 are the best way to test web applications:
 
 * In standard web applications, you simply do not have really complex business logic. There is no point in using unit tests.
-* Selenium tests are hard to setup (even with Plays support), require explizit fixtures and they are very slow - too slow to be run before each commit.
+* Selenium tests are hard to setup (even with Plays support), require explicit fixtures and they are very slow - too slow to be run before each commit.
 
 Example: Booking a ticket is fairly easy: Simply write a row into a database.
 Whats the point of writing a unit test for that?
@@ -94,7 +94,7 @@ the test is on the right page.
 Your `Page` class should exhibit a public method for each action a user can perform on 
 the page. That is the core of the Page Driver pattern: Create an abstract model of the page 
 under test so that changes do not affect the test at all or can be represented by a change
-of the Page Drivers public contract, which is obvioulsy under good control.
+of the Page Drivers public contract, which is obviously under good control.
 
 `Page` has a lot of methods available to perform actions (most notably, `clickName()`)
 and to access it contents (e.g. `form()`, `getElementsByTag()`). 
